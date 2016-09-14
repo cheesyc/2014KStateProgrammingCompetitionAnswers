@@ -13,7 +13,7 @@ while 1==1:
         return yourMPH
 
     def math2 (mph, x):
-        otherMPH = x * mph
+        otherMPH = mph + x * 2 ** x
         return otherMPH
 
     mph1 = math1(length,time)
@@ -24,4 +24,3 @@ while 1==1:
     answer = raw_input("Do you want to convert again?(y/n) ")
     if answer == "n":
         raise SystemExit
-+
