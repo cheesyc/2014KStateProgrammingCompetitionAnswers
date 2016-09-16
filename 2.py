@@ -1,31 +1,26 @@
 from __future__ import division
 from decimal import Decimal
 
-probability = float([0.5,0.4,0.6,0.75,0.3,0.83])_
-
-nogames = float(input("Enter number of games "))
+nogames = float(input("Enter total number of games "))
 
 if nogames == 0:
     print "Probability: 1"
+    raise SystemExit
 else:
     userlist = []
-    maxLength = 6
-    while len(userlist) < maxLength:
-        x = 0
+    while len(userlist) < nogames:
         useradd = input("Enter Game Number ")
-        if useradd = 1:
+        if useradd == 1:
             userlist.append(0.4)
-        elif useradd = 2:
+        elif useradd == 2:
             userlist.append(0.6)
-        elif useradd = 3:
+        elif useradd == 3:
             userlist.append(0.75)
-        elif useradd = 4
+        elif useradd == 4:
             userlist.append(0.3)
-        elif useradd = 5:
+        elif useradd == 5:
             userlist.append(0.83)
-        again = float(raw_input("Do you want to add another number?(y/n) "))
-        if again == "n":
-            maxLength = 0
-        else:
-            x + 1
-            
+        elif useradd == 0:
+            userlist.append(0.5)
+
+print "Probability:" + str(reduce(lambda x, y: x*y, userlist))
