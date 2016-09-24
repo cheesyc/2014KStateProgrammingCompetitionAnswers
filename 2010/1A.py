@@ -1,22 +1,28 @@
 gas = float(input("Cost of gas: "))
 numcars = float(input("Amount of cars: "))
 
-constant = 15/gas
 
 if numcars == 1:
     car1cost = float(input("Cost of car 1: "))
     car1miles = float(input("Amount of miles on car 1: "))
     car1gas = float(input("Gallons of gas on car 1: "))
-    calc1 = ((car1miles/car1gas) - constant)/car1cost
+    calc1 = ((car1cost / (car1miles / car1gas)) / gas) / 2
     print ("Car 1 is the best car. Years to pay off:", calc1 )
 elif numcars == 2:
     car1cost = float(input("Cost of car 1: "))
     car1miles = float(input("Amount of miles on car 1: "))
     car1gas = float(input("Gallons of gas on car 1: "))
+    calc1 = ((car1cost / (car1miles / car1gas)) / gas) / 2
 
     car2cost = float(input("Cost of car 2: "))
     car2miles = float(input("Amount of miles on car 2: "))
     car2gas = float(input("Gallons of gas on car 2: "))
+    calc2 = ((car2cost / (car2miles / car2gas)) / gas) / 2
+
+    if calc1 < calc2:
+        print ("Car 1 is the best car. Years to pay off:", calc1)
+    else:
+        print ("Car 2 is the best car. Years to pay off:", calc2)
 elif numcars == 3:
     car1cost = float(input("Cost of car 1: "))
     car1miles = float(input("Amount of miles on car 1: "))
